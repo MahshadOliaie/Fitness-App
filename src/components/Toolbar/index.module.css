@@ -4,6 +4,7 @@
     bottom: 0;
     display: flex;
     padding: 20px 30px;
+    background-color: white;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
@@ -20,6 +21,33 @@
 }
 
 
-.trash{
+.trash {
     padding: 3px;
+}
+
+.addBtn {
+    background-color: #FF8137;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+
+.addBtnBg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: calc(50% - 34.5px);
+    bottom: 45%;
+    background-color: #F6F8FB;
+    padding: 15px 15px;
+    border-radius: 30px;
+    box-shadow: inset 0px -2px 2px rgb(212, 212, 212);
+}
+
+.addBtn svg {
+    fill: white;
 }
