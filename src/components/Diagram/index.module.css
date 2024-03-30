@@ -1,0 +1,32 @@
+.diagram path {
+    fill: none;
+}
+
+.diagramContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diagram {
+    padding-top: 40px;
+}
+
+
+.protein {
+    stroke: #FF8137;
+    stroke-width: 25;
+    stroke-dasharray: 30 100;
+}
+
+.carbs {
+    stroke: #246CD0;
+    stroke-width: 25;
+    stroke-dasharray: 50 100;
+}
+
+.baseline {
+    stroke-width: 22;
+    stroke: rgba(0, 0, 0, 0.098);
+}

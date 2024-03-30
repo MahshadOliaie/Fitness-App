@@ -8,7 +8,7 @@
     box-shadow: 0 1px 1rem rgb(212, 212, 212);
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    position: fixed;
+    position: sticky;
     width: 100%;
 }
 
