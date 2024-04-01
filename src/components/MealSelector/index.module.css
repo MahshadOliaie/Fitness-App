@@ -1,0 +1,40 @@
+
+
+.meals{
+    position: absolute;
+    bottom: 160%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.meals>div{
+    border-radius: 20px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breakfast{
+    background-color: #246cd094;
+    backdrop-filter: blur(6px);
+}
+
+.lunch{
+    background-color: #ff8037af;
+    backdrop-filter: blur(6px);
+}
+
+.dinner{
+    background-color: #aeb5c094;
+    backdrop-filter: blur(6px);
+}
+
+.snack{
+    background-color: #1c1c1c94;
+    backdrop-filter: blur(6px);
+    color: white;
+}
