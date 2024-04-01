@@ -3,15 +3,13 @@
 }
 
 .diagramContainer {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    margin: 40px 0;
 }
 
-.diagram {
-    padding-top: 40px;
-}
 
 
 .protein {
@@ -19,6 +17,7 @@
     stroke-width: 25;
     stroke-dasharray: 30 100;
 }
+
 
 .carbs {
     stroke: #246CD0;
@@ -29,4 +28,68 @@
 .baseline {
     stroke-width: 22;
     stroke: rgba(0, 0, 0, 0.098);
+}
+
+
+.calories{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+    position: absolute;
+}
+
+.calories p{
+    margin: 2px;
+}
+
+.caloryNum{
+    font-size: 30px;
+    font-weight: 900;
+}
+
+
+.nutritionGuide{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.nutrition{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grams{
+    font-size: 21px;
+    font-weight: 800;
+    margin: 5px;
+}
+
+.unit{
+    font-size: 12px;
+    margin: 0;
+}
+
+.protein , .carbs , .fat{
+    width: 25px;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+}
+
+.protein{
+    background-color: #FF8137;
+}
+
+.carbs{
+    background-color: #246CD0;
+}
+
+.fat{
+    background-color: black;
 }
