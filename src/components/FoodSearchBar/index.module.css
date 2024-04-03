@@ -1,0 +1,26 @@
+
+
+
+.searchBar {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.searchBar input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(219, 219, 219);
+}
+
+.searchSvg{
+    position: absolute;
+    width: 18px;
+    opacity: .6;
+    left: calc(10% + 10px);
+    
+}

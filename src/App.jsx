@@ -1,16 +1,10 @@
-import Diagram from "./components/Diagram/Diagram"
-import MyHeader from "./components/Header/MyHeader"
-import Meals from "./components/Meals/Meals"
-import Toolbar from "./components/Toolbar/Toolbar"
+import Dashboard from "./components/Dashboard/Dashboard"
 
 function App() {
 
   return (
     <>
-      <MyHeader />
-      <Diagram />
-      <Meals />
-      <Toolbar />
+      <Dashboard />
     </>
   )
 }

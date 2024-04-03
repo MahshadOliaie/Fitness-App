@@ -1,8 +1,8 @@
 import CSS from './index.module.css'
 
-function MealSelector() {
+function MealSelector({ setIsFoodListOpen, setIsListOpen }) {
     return (
-        <div className={CSS.meals}>
+        <div className={CSS.meals} onClick={() => { setIsFoodListOpen(true); setIsListOpen(false) }}>
             <div className={CSS.breakfast}>
                 <p>breakfast</p>
             </div>
