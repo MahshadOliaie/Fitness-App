@@ -1,7 +1,20 @@
+import { useEffect, useState } from 'react'
+import Food from '../Food/Food'
 import FoodSearchBar from '../FoodSearchBar/FoodSearchBar'
 import CSS from './index.module.css'
 
-function FoodList({setIsFoodListOpen}) {
+function FoodList({ setIsFoodListOpen }) {
+    const [foodList, setFoodList] = useState([])
+
+    useEffect(() => {
+        fetch('https://api.api-ninjas.com/v1/nutrition?query=1lb egg and milk and rice and banana and bread and oats', {
+            headers: { 'X-Api-Key': 'hYvUzuDQpZu/odwBI/6Abg==T3kgV51IrePL78hW' },
+            contentType: 'application/json',
+        })
+            .then(res => res.json())
+            .then(data => setFoodList(data))
+    }, [])
+
     return (
         <>
             <div className={CSS.container}>
@@ -22,6 +35,11 @@ function FoodList({setIsFoodListOpen}) {
                 </div>
 
                 <FoodSearchBar />
+                <div className={CSS.foodList}>
+                    {foodList.map(food => {
+                        return <Food key={food.name} data={food}/>
+                    })}
+                </div>
             </div>
         </>
     )

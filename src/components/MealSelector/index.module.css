@@ -3,7 +3,7 @@
 .meals{
     position: absolute;
     bottom: 160%;
-    left: 40%;
+    left: calc(50% - 43px);
     display: flex;
     justify-content: center;
     flex-direction: column;
