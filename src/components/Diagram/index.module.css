@@ -12,36 +12,45 @@
 
 
 
-.protein {
+.proteinPath {
     stroke: #FF8137;
-    stroke-width: 25;
+    stroke-width: 3;
     stroke-dasharray: 30 100;
 }
 
 
-.carbs {
+.carbsPath {
     stroke: #246CD0;
-    stroke-width: 25;
+    stroke-width: 2.7;
     stroke-dasharray: 50 100;
 }
 
+.fatPath {
+    stroke: #000000;
+    stroke-width: 2.3;
+    stroke-dasharray: 60 100;
+}
+
 .baseline {
-    stroke-width: 22;
+    stroke-width: 2px;
     stroke: rgba(0, 0, 0, 0.098);
 }
 
+.diagram{
+    width: 250px;
+}
 
 .calories{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 40px;
+    gap: 6px;
     position: absolute;
 }
 
-.calories p{
-    margin: 2px;
+.left{
+    font-size: 18px;
 }
 
 .caloryNum{
@@ -75,6 +84,8 @@
     font-size: 12px;
     margin: 0;
 }
+
+
 
 .protein , .carbs , .fat{
     width: 25px;
