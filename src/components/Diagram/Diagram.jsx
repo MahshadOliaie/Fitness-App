@@ -19,6 +19,11 @@ function Diagram() {
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
+                    <path className={CSS.othersPath} strokeDasharray="100" d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+
                     <path className={CSS.fatPath} strokeDasharray="100" d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
@@ -56,8 +61,14 @@ function Diagram() {
 
                 <div className={CSS.nutrition}>
                     <div className={CSS.fat}></div>
-                    <p className={CSS.grams}>0g</p>
+                    <p className={CSS.grams}>20g</p>
                     <p className={CSS.unit}>FAT</p>
+                </div>
+
+                <div className={CSS.nutrition}>
+                    <div className={CSS.others}></div>
+                    <p className={CSS.grams}>50g</p>
+                    <p className={CSS.unit}>OTHERS</p>
                 </div>
             </div>
         </>
