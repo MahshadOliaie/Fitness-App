@@ -25,16 +25,16 @@ function FoodList({ setIsFoodListOpen, selectedMeal }) {
         setIsFoodListOpen(false)
         switch (selectedMeal) {
             case "breakfast":
-                setBreakfast(selectedFoods)
+                setBreakfast(prev => [...prev, ...selectedFoods])
                 break;
             case "lunch":
-                setLunch(selectedFoods)
+                setLunch(prev => [...prev, ...selectedFoods])
                 break;
             case "dinner":
-                setDinner(selectedFoods)
+                setDinner(prev => [...prev, ...selectedFoods])
                 break;
             case "snack":
-                setSnack(selectedFoods)
+                setSnack(prev => [...prev, ...selectedFoods])
                 break;
             default:
         }
