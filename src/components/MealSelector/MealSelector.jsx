@@ -1,11 +1,12 @@
 import EachMeal from './EachMeal';
 import CSS from './index.module.css'
 
-function MealSelector({ setIsFoodListOpen, setIsMealSelectorOpen }) {
+function MealSelector({ setIsFoodListOpen, setIsMealSelectorOpen , setSelectedMeal}) {
 
     function handleClick() {
         setIsFoodListOpen(true);
         setIsMealSelectorOpen(false)
+        setSelectedMeal(event.target.textContent)
     }
 
     return (

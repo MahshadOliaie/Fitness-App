@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Food from '../Food/Food'
 import FoodSearchBar from '../FoodSearchBar/FoodSearchBar'
 import CSS from './index.module.css'
+import FoodContext from '../../context/FoodContext'
 
-function FoodList({ setIsFoodListOpen }) {
+function FoodList({ setIsFoodListOpen, selectedMeal }) {
     const [foodList, setFoodList] = useState([])
     const [filteredFoodList, setFilteredFoodList] = useState([])
-    const [selectedFoods , setSelectedFoods] = useState([])
+    const [selectedFoods, setSelectedFoods] = useState([])
+    const { setBreakfast, setDinner, setLunch, setSnack } = useContext(FoodContext)
 
     useEffect(() => {
         fetch('https://api.api-ninjas.com/v1/nutrition?query=1lb egg and milk and rice and banana and bread and oats', {
@@ -19,6 +21,25 @@ function FoodList({ setIsFoodListOpen }) {
         return () => { }
     }, [])
 
+    function handleLog() {
+        setIsFoodListOpen(false)
+        switch (selectedMeal) {
+            case "breakfast":
+                setBreakfast(selectedFoods)
+                break;
+            case "lunch":
+                setLunch(selectedFoods)
+                break;
+            case "dinner":
+                setDinner(selectedFoods)
+                break;
+            case "snack":
+                setSnack(selectedFoods)
+                break;
+            default:
+        }
+    }
+
     return (
         <>
             <div className={CSS.container}>
@@ -26,7 +47,7 @@ function FoodList({ setIsFoodListOpen }) {
                     <svg className={CSS.close} onClick={() => setIsFoodListOpen(false)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" /></svg>
                     <h2 className={CSS.title}>Food Search</h2>
                     <div className={CSS.space}>
-                        {selectedFoods.length>0 && <><div className={CSS.logBox}><p className={CSS.logCounter}>{selectedFoods.length}</p>LOG</div></>}
+                        {selectedFoods.length > 0 && <><div className={CSS.logBox} onClick={handleLog}><p className={CSS.logCounter}>{selectedFoods.length}</p>LOG</div></>}
                     </div>
                 </div>
                 <div className={CSS.selectWay}>

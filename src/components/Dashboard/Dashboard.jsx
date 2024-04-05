@@ -7,13 +7,14 @@ import Meals from "../Meals/Meals"
 
 function Dashboard() {
     const [isFoodListOpen, setIsFoodListOpen] = useState(false)
+    const [selectedMeal , setSelectedMeal] = useState("")
 
     return (
         <>
-            <Layout setIsFoodListOpen={setIsFoodListOpen} >
+            <Layout setIsFoodListOpen={setIsFoodListOpen} setSelectedMeal={setSelectedMeal} >
                 <Diagram />
                 <Meals />
-                {isFoodListOpen && <FoodList setIsFoodListOpen={setIsFoodListOpen}/>}
+                {isFoodListOpen && <FoodList setIsFoodListOpen={setIsFoodListOpen} selectedMeal={selectedMeal}/>}
             </Layout>
         </>
     )
