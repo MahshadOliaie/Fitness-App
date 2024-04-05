@@ -35,4 +35,12 @@
     aspect-ratio: 1/1;
     border-radius: 50%;
     border: .7px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectBox svg{
+    width: 65%;
+    fill: #F6F8FB;
 }
