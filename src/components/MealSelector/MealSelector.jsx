@@ -1,20 +1,19 @@
+import EachMeal from './EachMeal';
 import CSS from './index.module.css'
 
-function MealSelector({ setIsFoodListOpen, setIsListOpen }) {
+function MealSelector({ setIsFoodListOpen, setIsMealSelectorOpen }) {
+
+    function handleClick() {
+        setIsFoodListOpen(true);
+        setIsMealSelectorOpen(false)
+    }
+
     return (
-        <div className={CSS.meals} onClick={() => { setIsFoodListOpen(true); setIsListOpen(false) }}>
-            <div className={CSS.breakfast}>
-                <p>breakfast</p>
-            </div>
-            <div className={CSS.lunch}>
-                <p>lunch</p>
-            </div>
-            <div className={CSS.dinner}>
-                <p>dinner</p>
-            </div>
-            <div className={CSS.snack}>
-                <p>snack</p>
-            </div>
+        <div className={CSS.meals}>
+            <EachMeal meal={"breakfast"} onClick={handleClick} />
+            <EachMeal meal={"lunch"} onClick={handleClick} />
+            <EachMeal meal={"dinner"} onClick={handleClick} />
+            <EachMeal meal={"snack"} onClick={handleClick} />
         </div>
     )
 }

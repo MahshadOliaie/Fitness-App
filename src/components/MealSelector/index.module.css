@@ -17,24 +17,3 @@
     align-items: center;
     justify-content: center;
 }
-
-.breakfast{
-    background-color: #246cd094;
-    backdrop-filter: blur(6px);
-}
-
-.lunch{
-    background-color: #ff8037af;
-    backdrop-filter: blur(6px);
-}
-
-.dinner{
-    background-color: #aeb5c094;
-    backdrop-filter: blur(6px);
-}
-
-.snack{
-    background-color: #1c1c1c94;
-    backdrop-filter: blur(6px);
-    color: white;
-}

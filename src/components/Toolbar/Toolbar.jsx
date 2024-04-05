@@ -4,7 +4,7 @@ import CSS from './index.module.css'
 
 
 function Toolbar({setIsFoodListOpen}) {
-    const [isListOpen, setIsListOpen] = useState(false)
+    const [isMealSelectorOpen, setIsMealSelectorOpen] = useState(false)
 
     return (
         <div className={CSS.toolbar}>
@@ -15,11 +15,11 @@ function Toolbar({setIsFoodListOpen}) {
             <svg className={CSS.dashboard} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill={(location.pathname == "/") ? "black" : ""} d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm320 96c0-15.9-5.8-30.4-15.3-41.6l76.6-147.4c6.1-11.8 1.5-26.3-10.2-32.4s-26.2-1.5-32.4 10.2L262.1 288.3c-2-.2-4-.3-6.1-.3c-35.3 0-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z" /></svg>
 
             <div className={CSS.addBtnBg}>
-                <div className={CSS.addBtn} onClick={() => setIsListOpen(prev => !prev)}>
-                    <svg style={isListOpen ?{ rotate: "-45deg", transition: '200ms' } : {}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" /></svg>
+                <div className={CSS.addBtn} onClick={() => setIsMealSelectorOpen(prev => !prev)}>
+                    <svg style={isMealSelectorOpen ?{ rotate: "-45deg", transition: '200ms' } : {}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" /></svg>
                 </div>
             </div>
-            {isListOpen && <MealSelector setIsFoodListOpen={setIsFoodListOpen} setIsListOpen={setIsListOpen}/>}
+            {isMealSelectorOpen && <MealSelector setIsFoodListOpen={setIsFoodListOpen} setIsMealSelectorOpen={setIsMealSelectorOpen}/>}
         </div>
     )
 }
