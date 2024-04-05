@@ -11,14 +11,17 @@ function Meals() {
                     <p className={CSS.mealName}>breakfast</p>
                     <p className={CSS.cal}>{(breakfastInfo.calories).reduce((acc, curr) => acc + curr, 0)}</p>
                 </div>
+                <div className={CSS.devider}></div>
                 <div className={CSS.lunch}>
                     <p className={CSS.mealName}>lunch</p>
                     <p className={CSS.cal}>{(lunchInfo.calories).reduce((acc, curr) => acc + curr, 0)}</p>
                 </div>
+                <div className={CSS.devider}></div>
                 <div className={CSS.dinner}>
                     <p className={CSS.mealName}>dinner</p>
                     <p className={CSS.cal}>{(dinnerInfo.calories).reduce((acc, curr) => acc + curr, 0)}</p>
                 </div>
+                <div className={CSS.devider}></div>
                 <div className={CSS.snacks}>
                     <p className={CSS.mealName}>snacks</p>
                     <p className={CSS.cal}>{(snackInfo.calories).reduce((acc, curr) => acc + curr, 0)}</p>

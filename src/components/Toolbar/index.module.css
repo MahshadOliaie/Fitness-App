@@ -1,7 +1,6 @@
 .toolbar {
     width: 100%;
-    max-width: 500px;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     display: flex;
     padding: 20px 30px;

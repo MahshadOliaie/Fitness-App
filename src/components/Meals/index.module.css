@@ -3,8 +3,7 @@
     align-items: center;
     justify-content: space-between;
     width: 90%;
-    margin: 0 auto;
-    margin-top: 40px;
+    margin: 40px auto;
     background-color: rgba(0, 0, 0, 0.081);
     padding: 40px;
     border-radius: 40px;
@@ -31,24 +30,8 @@ p {
     font-size: 18px;
 }
 
-.breakfast::after,
-.lunch::after,
-.dinner::after {
-    content: "";
+.devider{
     width: .5px;
+    height: 50px;
     background-color: black;
-    height: 80px;
-    position: absolute;
-}
-
-.breakfast::after{
-    left: 85px;
-}
-
-.lunch::after{
-    left: 70px;
-}
-
-.dinner::after{
-    left: 70px;
 }
