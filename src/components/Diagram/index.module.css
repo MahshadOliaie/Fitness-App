@@ -15,26 +15,22 @@
 .proteinPath {
     stroke: #FF8137;
     stroke-width: 3.4;
-    stroke-dasharray: 30 100;
 }
 
 
 .carbsPath {
     stroke: #246CD0;
     stroke-width: 2.9;
-    stroke-dasharray: 50 100;
 }
 
 .fatPath {
     stroke: #000000;
     stroke-width: 2.5;
-    stroke-dasharray: 60 100;
 }
 
 .othersPath{
     stroke: rgb(36, 108, 208 , 29%);
     stroke-width: 2.1;
-    stroke-dasharray: 80 100;
 }
 
 .baseline {

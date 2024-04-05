@@ -4,34 +4,31 @@ import FoodContext from "../context/FoodContext"
 
 function useCalculator() {
     const { breakfast, lunch, dinner, snack } = useContext(FoodContext)
+    console.log("hi")
 
     const breakfastInfo = {
         calories: [],
         protein: [],
         carbs: [],
         fat: [],
-        others: []
     }
     const lunchInfo = {
         calories: [],
         protein: [],
         carbs: [],
         fat: [],
-        others: []
     }
     const dinnerInfo = {
         calories: [],
         protein: [],
         carbs: [],
         fat: [],
-        others: []
     }
     const snackInfo = {
         calories: [],
         protein: [],
         carbs: [],
         fat: [],
-        others: []
     }
 
 
