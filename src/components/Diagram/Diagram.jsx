@@ -9,7 +9,7 @@ function Diagram() {
         protein: [...breakfastInfo.protein, ...lunchInfo.protein, ...dinnerInfo.protein, snackInfo.protein].reduce((acc, curr) => +acc + +curr, 0),
         carbs: [...breakfastInfo.carbs, ...lunchInfo.carbs, ...dinnerInfo.carbs, snackInfo.carbs].reduce((acc, curr) => +acc + +curr, 0),
         fat: [...breakfastInfo.fat, ...lunchInfo.fat, ...dinnerInfo.fat, snackInfo.fat].reduce((acc, curr) => +acc + +curr, 0),
-        }
+    }
 
     const caloriesOf = {
         protein: total.protein * 4,
@@ -29,7 +29,7 @@ function Diagram() {
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
-                    <path className={CSS.othersPath} strokeDasharray={`${(total.calories / (2500 / 100)) } 100`} d="M18 2.0845
+                    <path className={CSS.othersPath} strokeDasharray={`${(total.calories / (2500 / 100))} 100`} d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
@@ -51,8 +51,19 @@ function Diagram() {
 
                 </svg>
                 <div className={CSS.calories}>
-                    <p className={CSS.caloryNum}>{2500 - total.calories}</p>
-                    <p className={CSS.left}>left</p>
+                    <p className={CSS.caloryNum}>{total.calories}</p>
+                    {(total.calories <= 2500) ?
+                        <>
+                            <p className={CSS.budget}>{2500 - total.calories}</p>
+                            <p className={CSS.left}>left</p>
+                        </>
+                        :
+                        <>
+                            <p className={CSS.budget}>{total.calories - 2500}</p>
+                            <p className={CSS.left} style={{ color: "red" }}>over</p>
+                        </>
+                    }
+
                 </div>
             </div>
 

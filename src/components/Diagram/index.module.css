@@ -47,17 +47,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 6px;
     position: absolute;
 }
 
-.left{
+.left , .budget{
     font-size: 18px;
 }
 
 .caloryNum{
     font-size: 30px;
     font-weight: 900;
+    margin-bottom: 10px;
 }
 
 
