@@ -5,6 +5,7 @@ import CSS from './index.module.css'
 
 function FoodList({ setIsFoodListOpen }) {
     const [foodList, setFoodList] = useState([])
+    const [filteredFoodList, setFilteredFoodList] = useState([])
 
     useEffect(() => {
         fetch('https://api.api-ninjas.com/v1/nutrition?query=1lb egg and milk and rice and banana and bread and oats', {
@@ -12,7 +13,9 @@ function FoodList({ setIsFoodListOpen }) {
             contentType: 'application/json',
         })
             .then(res => res.json())
-            .then(data => setFoodList(data))
+            .then(data => { setFoodList(data); setFilteredFoodList(data) })
+
+        return () => { }
     }, [])
 
     return (
@@ -34,10 +37,10 @@ function FoodList({ setIsFoodListOpen }) {
                     </div>
                 </div>
 
-                <FoodSearchBar />
+                <FoodSearchBar setFilteredFoodList={setFilteredFoodList} foodList={foodList} />
                 <div className={CSS.foodList}>
-                    {foodList.map(food => {
-                        return <Food key={food.name} data={food}/>
+                    {filteredFoodList?.map(food => {
+                        return <Food key={food.name} data={food} />
                     })}
                 </div>
             </div>
