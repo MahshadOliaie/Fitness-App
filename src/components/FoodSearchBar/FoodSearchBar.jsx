@@ -1,26 +1,26 @@
 
+import { useEffect, useState } from 'react'
+import useFetch from '../../hooks/useFetch'
 import CSS from './index.module.css'
 
 
 function FoodSearchBar({ setFilteredFoodList, foodList }) {
+    const [inputValue, setInputValue] = useState("")
+    const data = useFetch(`https://api.api-ninjas.com/v1/nutrition?query=${inputValue}` , inputValue)
+
+    useEffect(() => {
+        if (data?.length > 0) { setFilteredFoodList(data) }
+    }, [data])
 
     function handleChange() {
         const value = event.target.value
-        if (value === "") {
+
+        if (value === "")
             setFilteredFoodList(foodList)
-        }
 
-        else {
-            fetch(`https://api.api-ninjas.com/v1/nutrition?query=${value}`, {
-                headers: { 'X-Api-Key': 'hYvUzuDQpZu/odwBI/6Abg==T3kgV51IrePL78hW' },
-                contentType: 'application/json',
-            })
-                .then(res => res.json())
-                .then(data => { if (data.length > 0) { setFilteredFoodList(data) } })
-        }
-
+        else
+            setInputValue(value)
     }
-
 
     return (
         <>

@@ -4,7 +4,6 @@ import FoodContext from "../context/FoodContext"
 
 function useCalculator() {
     const { breakfast, lunch, dinner, snack } = useContext(FoodContext)
-    console.log("hi")
 
     const breakfastInfo = {
         calories: [],

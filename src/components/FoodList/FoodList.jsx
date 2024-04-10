@@ -2,21 +2,17 @@ import { useEffect, useState } from 'react'
 import Food from '../Food/Food'
 import FoodSearchBar from '../FoodSearchBar/FoodSearchBar'
 import CSS from './index.module.css'
+import useFetch from '../../hooks/useFetch'
 
 function FoodList({ setSelectedFoods }) {
     const [foodList, setFoodList] = useState([])
     const [filteredFoodList, setFilteredFoodList] = useState([])
+    const data = useFetch('https://api.api-ninjas.com/v1/nutrition?query=egg and milk and rice and banana and bread and oats')
 
     useEffect(() => {
-        fetch('https://api.api-ninjas.com/v1/nutrition?query=egg and milk and rice and banana and bread and oats', {
-            headers: { 'X-Api-Key': 'hYvUzuDQpZu/odwBI/6Abg==T3kgV51IrePL78hW' },
-            contentType: 'application/json',
-        })
-            .then(res => res.json())
-            .then(data => { setFoodList(data); setFilteredFoodList(data) })
-
-        return () => { }
-    }, [])
+        setFoodList(data);
+        setFilteredFoodList(data)
+    }, [data])
 
     return (
         <>
