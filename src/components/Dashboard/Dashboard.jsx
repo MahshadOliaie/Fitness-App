@@ -13,7 +13,6 @@ function Dashboard({setIsFoodListOpen , selectedMeal , isFoodListOpen}) {
                 <Diagram />
                 <Meals />
                 {isFoodListOpen && <FoodList setIsFoodListOpen={setIsFoodListOpen} selectedMeal={selectedMeal} />}
-                <Diagram />
         </>
     )
 }
