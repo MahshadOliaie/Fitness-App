@@ -1,6 +1,6 @@
 
 import Diagram from "../Diagram/Diagram"
-import FoodList from "../FoodList/FoodList"
+import AddFoodWindow from "../AddFoodWindow/AddFoodWindow"
 import Meals from "../Meals/Meals"
 
 
@@ -12,7 +12,7 @@ function Dashboard({setIsFoodListOpen , selectedMeal , isFoodListOpen}) {
         <>
                 <Diagram />
                 <Meals />
-                {isFoodListOpen && <FoodList setIsFoodListOpen={setIsFoodListOpen} selectedMeal={selectedMeal} />}
+                {isFoodListOpen && <AddFoodWindow setIsFoodListOpen={setIsFoodListOpen} selectedMeal={selectedMeal} />}
         </>
     )
 }
