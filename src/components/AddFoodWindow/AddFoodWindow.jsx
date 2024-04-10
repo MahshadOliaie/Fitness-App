@@ -2,6 +2,7 @@ import { useState } from 'react'
 import CSS from './index.module.css'
 import FoodList from '../FoodList/FoodList'
 import LogFoodBtn from '../LogFoodBtn/LogFoodBtn'
+import CaloryLog from '../CaloryLog/CaloryLog'
 
 function AddFoodWindow({ setIsFoodListOpen, selectedMeal }) {
 
@@ -31,8 +32,12 @@ function AddFoodWindow({ setIsFoodListOpen, selectedMeal }) {
                     </div>
                 </div>
 
-                <FoodList setSelectedFoods={setSelectedFoods} />
-                
+                {(selectingWay == "Search") ?
+                    <FoodList setSelectedFoods={setSelectedFoods} />
+                    :
+                    <CaloryLog selectedMeal={selectedMeal} setIsFoodListOpen={setIsFoodListOpen} />
+                }
+
             </div>
         </>
     )
