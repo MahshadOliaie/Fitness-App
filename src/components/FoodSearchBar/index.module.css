@@ -1,9 +1,7 @@
-
-
-
 .searchBar {
     width: 80%;
     margin: auto;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
 }
@@ -17,10 +15,14 @@
     background-color: rgb(219, 219, 219);
 }
 
-.searchSvg{
+.searchBar input:focus-visible {
+    outline: none;
+}
+
+.searchSvg {
     position: absolute;
     width: 18px;
     opacity: .6;
     left: calc(10% + 10px);
-    
+
 }

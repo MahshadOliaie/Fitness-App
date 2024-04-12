@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CSS from './index.module.css'
 import FoodList from '../FoodList/FoodList'
 import LogFoodBtn from '../LogFoodBtn/LogFoodBtn'
 import CaloryLog from '../CaloryLog/CaloryLog'
+import LogHistory from '../../context/LogHistory'
 
 function AddFoodWindow({ setIsFoodListOpen, selectedMeal }) {
 
     const [selectedFoods, setSelectedFoods] = useState([])
     const [selectingWay, setSelectingWay] = useState("Search")
-
-
+  
     return (
         <>
             <div className={CSS.container}>
