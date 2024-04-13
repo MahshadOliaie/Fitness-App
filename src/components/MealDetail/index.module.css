@@ -1,0 +1,25 @@
+.container {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5rem rgb(213, 213, 213);
+    width: 400px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.header {
+    background-color: rgb(36, 108, 208, 29%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.close {
+    width: 20px;
+    fill: #246CD0;
+}
+
