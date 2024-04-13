@@ -5,7 +5,7 @@ import CSS from './index.module.css'
 import useFetch from '../../hooks/useFetch'
 import LogHistory from '../../context/LogHistory'
 
-function FoodList({ setSelectedFoods }) {
+function FoodList({ setSelectedFoods , selectedFoods }) {
     const [foodList, setFoodList] = useState([])
     const [filteredFoodList, setFilteredFoodList] = useState([])
     const { logHistory } = useContext(LogHistory)
@@ -23,11 +23,11 @@ function FoodList({ setSelectedFoods }) {
             <div className={CSS.foodList}>
                 <div className={CSS.recentList}>
                     {(filteredFoodList.length > 1) && logHistory.map(food => {
-                        return <Food key={food.name} data={food} setSelectedFoods={setSelectedFoods} />
+                        return <Food key={food.name} data={food} setSelectedFoods={setSelectedFoods} selectedFoods={selectedFoods} />
                     })}
                 </div>
                 {filteredFoodList?.map(food => {
-                    return <Food key={food.name} data={food} setSelectedFoods={setSelectedFoods} />
+                    return <Food key={food.name} data={food} setSelectedFoods={setSelectedFoods} selectedFoods={selectedFoods} />
                 })}
             </div>
         </>

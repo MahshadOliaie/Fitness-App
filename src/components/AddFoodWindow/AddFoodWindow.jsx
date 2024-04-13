@@ -33,7 +33,7 @@ function AddFoodWindow({ setIsFoodListOpen, selectedMeal }) {
                 </div>
 
                 {(selectingWay == "Search") ?
-                    <FoodList setSelectedFoods={setSelectedFoods} />
+                    <FoodList setSelectedFoods={setSelectedFoods} selectedFoods={selectedFoods}/>
                     :
                     <CaloryLog selectedMeal={selectedMeal} setIsFoodListOpen={setIsFoodListOpen} />
                 }

@@ -3,7 +3,7 @@ import CSS from './index.module.css'
 
 function Diagram() {
     const { breakfastInfo, lunchInfo, dinnerInfo, snackInfo } = useCalculator()
-debugger
+
     const total = {
         calories: [...breakfastInfo.calories, ...lunchInfo.calories, ...dinnerInfo.calories, snackInfo.calories].reduce((acc, curr) => +acc + +curr, 0),
         protein: [...breakfastInfo.protein, ...lunchInfo.protein, ...dinnerInfo.protein, snackInfo.protein].reduce((acc, curr) => +acc + +curr, 0),
