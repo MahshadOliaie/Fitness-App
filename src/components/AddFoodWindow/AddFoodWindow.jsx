@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import CSS from './index.module.css'
 import FoodList from '../FoodList/FoodList'
 import LogFoodBtn from '../LogFoodBtn/LogFoodBtn'
 import CaloryLog from '../CaloryLog/CaloryLog'
-import LogHistory from '../../context/LogHistory'
 
 function AddFoodWindow({ setIsFoodListOpen, selectedMeal }) {
 

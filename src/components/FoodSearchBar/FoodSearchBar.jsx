@@ -1,25 +1,27 @@
 
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import useFetch from '../../hooks/useFetch'
 import CSS from './index.module.css'
+import FoodListContext from '../../context/FoodListContext'
 
 
-function FoodSearchBar({ setFilteredFoodList, foodList }) {
+function FoodSearchBar() {
+    const { foodList, setFilteredFoodList } = useContext(FoodListContext)
     const [inputValue, setInputValue] = useState("")
-    const data = useFetch(`https://api.api-ninjas.com/v1/nutrition?query=${inputValue}` , inputValue)
+    const data = useFetch(`https://api.api-ninjas.com/v1/nutrition?query=${inputValue}`, inputValue)
 
     useEffect(() => {
-        if (data?.length > 0) { setFilteredFoodList(data) }
+        if (data?.length > 0) {
+            setFilteredFoodList(data)
+        }
+        else {
+            setFilteredFoodList(foodList)
+        }
     }, [data])
 
     function handleChange() {
         const value = event.target.value
-
-        if (value === "")
-            setFilteredFoodList(foodList)
-
-        else
-            setInputValue(value)
+        setInputValue(value)
     }
 
     return (
