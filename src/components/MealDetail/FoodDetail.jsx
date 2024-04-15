@@ -6,20 +6,19 @@ function FoodDetail({ data, boxHeader }) {
     const { setBreakfast, setLunch, setDinner, setSnack } = useContext(FoodContext)
 
     function deleteFn() {
-        debugger
         switch (boxHeader) {
             case "breakfast":
-                setBreakfast(prev => prev.filter(item => { return item !== data }))
+                setBreakfast(prev => prev.filter(item => item !== data))
                 break;
             case "lunch":
-                setLunch(prev => prev.filter(item => { return item !== data }))
+                setLunch(prev => prev.filter(item => item !== data))
                 break;
             case "dinner":
                 console.log("dinner")
-                setDinner(prev => prev.filter(item => { return item !== data }))
+                setDinner(prev => prev.filter(item => item !== data))
                 break;
             case "snack":
-                setSnack(prev => prev.filter(item => { return item !== data }))
+                setSnack(prev => prev.filter(item => item !== data))
                 break;
             default:
         }

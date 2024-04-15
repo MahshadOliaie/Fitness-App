@@ -7,11 +7,12 @@ import LogHistory from '../../context/LogHistory';
 function LogFoodBtn({ selectedFoods, setIsFoodListOpen, selectedMeal }) {
 
     const { setBreakfast, setDinner, setLunch, setSnack } = useContext(FoodContext)
-    const { setLogHistory } = useContext(LogHistory)
+    const { setLogHistory, logHistory } = useContext(LogHistory)
 
     function handleLog() {
         setIsFoodListOpen(false)
-        setLogHistory(prev => [...prev, ...selectedFoods])
+        let newHistory = selectedFoods.filter(item => !logHistory.includes(item))
+        setLogHistory(prev => [...prev, ...newHistory])
         switch (selectedMeal) {
             case "breakfast":
                 setBreakfast(prev => [...prev, ...selectedFoods])
