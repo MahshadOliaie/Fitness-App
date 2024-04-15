@@ -23,3 +23,37 @@
     fill: #246CD0;
 }
 
+
+.foodDetail{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: .5px solid black;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cal{
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+.rightBox{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.deleteSvg{
+    fill: #246CD0;
+    width: 15px;
+}

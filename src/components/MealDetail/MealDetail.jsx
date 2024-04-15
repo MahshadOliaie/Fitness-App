@@ -2,22 +2,54 @@
 import { useContext } from 'react'
 import CSS from './index.module.css'
 import FoodContext from '../../context/FoodContext'
+import FoodDetail from './FoodDetail'
+import useCalculator from '../../hooks/useCalculator'
 
 
 function MealDetail({ setIsDetailBoxOpen, boxHeader }) {
     const { breakfast, lunch, dinner, snack } = useContext(FoodContext)
+    const { breakfastInfo, lunchInfo, dinnerInfo, snackInfo } = useCalculator()
+
     return (
         <>
             <div className={CSS.container}>
                 <div className={CSS.header}>
                     <svg className={CSS.close} onClick={() => setIsDetailBoxOpen(false)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" /></svg>
                     <h2 className={CSS.title}>{boxHeader}</h2>
-                    <p></p>
+                    <p>
+                        {(boxHeader == "breakfast") ?
+                            (breakfastInfo.calories).reduce((acc, curr) => acc + curr, 0)
+                            :
+                            (boxHeader == "lunch") ?
+                                (lunchInfo.calories).reduce((acc, curr) => acc + curr, 0)
+                                :
+                                (boxHeader == "dinner") ?
+                                    (dinnerInfo.calories).reduce((acc, curr) => acc + curr, 0)
+                                    :
+                                    (snackInfo.calories).reduce((acc, curr) => acc + curr, 0)
+                        }
+                    </p>
                 </div>
                 <div className={CSS.list}>
-                    {snack.map(item => {
-                        console.log(item)
-                    })}
+                    {(boxHeader == "breakfast") ?
+                        breakfast.map(item => {
+                            return <FoodDetail data={item} key={item.name} />
+                        })
+                        :
+                        (boxHeader == "lunch") ?
+                            lunch.map(item => {
+                                return <FoodDetail data={item} key={item.name} />
+                            })
+                            :
+                            (boxHeader == "dinner") ?
+                                dinner.map(item => {
+                                    return <FoodDetail data={item} key={item.name} />
+                                })
+                                :
+                                snack.map(item => {
+                                    return <FoodDetail data={item} key={item.name} />
+                                })
+                    }
                 </div>
             </div>
         </>
