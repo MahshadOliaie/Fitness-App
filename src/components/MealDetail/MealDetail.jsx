@@ -10,6 +10,7 @@ function MealDetail({ setIsDetailBoxOpen, boxHeader }) {
     const { breakfast, lunch, dinner, snack } = useContext(FoodContext)
     const { breakfastInfo, lunchInfo, dinnerInfo, snackInfo } = useCalculator()
 
+
     return (
         <>
             <div className={CSS.container}>
@@ -33,21 +34,21 @@ function MealDetail({ setIsDetailBoxOpen, boxHeader }) {
                 <div className={CSS.list}>
                     {(boxHeader == "breakfast") ?
                         breakfast.map(item => {
-                            return <FoodDetail data={item} key={item.name} />
+                            return <FoodDetail data={item} key={item.name} boxHeader={boxHeader} />
                         })
                         :
                         (boxHeader == "lunch") ?
                             lunch.map(item => {
-                                return <FoodDetail data={item} key={item.name} />
+                                return <FoodDetail data={item} key={item.name} boxHeader={boxHeader} />
                             })
                             :
                             (boxHeader == "dinner") ?
                                 dinner.map(item => {
-                                    return <FoodDetail data={item} key={item.name} />
+                                    return <FoodDetail data={item} key={item.name} boxHeader={boxHeader} />
                                 })
                                 :
                                 snack.map(item => {
-                                    return <FoodDetail data={item} key={item.name} />
+                                    return <FoodDetail data={item} key={item.name} boxHeader={boxHeader} />
                                 })
                     }
                 </div>
