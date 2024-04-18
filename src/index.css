@@ -7,6 +7,7 @@ body{
     max-width: 500px;
     margin: 0 auto;
     outline: 1px solid rgba(0, 0, 0, 0.207);
+    min-height: 100vh;
 }
 
 *{

@@ -5,10 +5,10 @@ function Diagram() {
     const { breakfastInfo, lunchInfo, dinnerInfo, snackInfo } = useCalculator()
 
     const total = {
-        calories: [...breakfastInfo.calories, ...lunchInfo.calories, ...dinnerInfo.calories, snackInfo.calories].reduce((acc, curr) => +acc + +curr, 0),
-        protein: [...breakfastInfo.protein, ...lunchInfo.protein, ...dinnerInfo.protein, snackInfo.protein].reduce((acc, curr) => +acc + +curr, 0),
-        carbs: [...breakfastInfo.carbs, ...lunchInfo.carbs, ...dinnerInfo.carbs, snackInfo.carbs].reduce((acc, curr) => +acc + +curr, 0),
-        fat: [...breakfastInfo.fat, ...lunchInfo.fat, ...dinnerInfo.fat, snackInfo.fat].reduce((acc, curr) => +acc + +curr, 0),
+        calories: [...breakfastInfo.calories, ...lunchInfo.calories, ...dinnerInfo.calories, ...snackInfo.calories].reduce((acc, curr) => +acc + +curr, 0),
+        protein: [...breakfastInfo.protein, ...lunchInfo.protein, ...dinnerInfo.protein, ...snackInfo.protein].reduce((acc, curr) => +acc + +curr, 0),
+        carbs: [...breakfastInfo.carbs, ...lunchInfo.carbs, ...dinnerInfo.carbs, ...snackInfo.carbs].reduce((acc, curr) => +acc + +curr, 0),
+        fat: [...breakfastInfo.fat, ...lunchInfo.fat, ...dinnerInfo.fat, ...snackInfo.fat].reduce((acc, curr) => +acc + +curr, 0),
     }
 
     const caloriesOf = {

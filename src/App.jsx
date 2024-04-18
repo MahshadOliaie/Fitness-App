@@ -4,6 +4,10 @@ import Dashboard from "./components/Dashboard/Dashboard"
 import FoodContext from "./context/FoodContext"
 import Layout from "./components/Layout/Layout"
 import LogHistory from "./context/LogHistory"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import WaterPage from "./components/WaterPage/WaterPage"
+import RecipePage from "./components/RecipePage/RecipePage"
+import Profile from "./components/Profile/Profile"
 
 function App() {
   const [breakfast, setBreakfast] = useState(JSON.parse(localStorage.getItem("breakfast")) || [])
@@ -41,12 +45,22 @@ function App() {
           setLogHistory
         }}>
 
-          <Layout setIsFoodListOpen={setIsFoodListOpen} setSelectedMeal={setSelectedMeal}>
-            <Dashboard setIsFoodListOpen={setIsFoodListOpen} selectedMeal={selectedMeal} isFoodListOpen={isFoodListOpen} />
-          </Layout>
+
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout setIsFoodListOpen={setIsFoodListOpen} setSelectedMeal={setSelectedMeal}>
+                <Dashboard setIsFoodListOpen={setIsFoodListOpen} selectedMeal={selectedMeal} isFoodListOpen={isFoodListOpen} /></Layout>}></Route>
+              <Route path="/WaterPage" element={<Layout setIsFoodListOpen={setIsFoodListOpen} setSelectedMeal={setSelectedMeal}>
+                <WaterPage /></Layout>}></Route>
+              <Route path="/Recipes" element={<Layout setIsFoodListOpen={setIsFoodListOpen} setSelectedMeal={setSelectedMeal}>
+                <RecipePage /></Layout>}></Route>
+              <Route path="/Profile" element={<Layout setIsFoodListOpen={setIsFoodListOpen} setSelectedMeal={setSelectedMeal}><Profile /></Layout>}></Route>
+            </Routes>
+          </BrowserRouter>
+
 
         </LogHistory.Provider>
-      </FoodContext.Provider>
+      </FoodContext.Provider >
     </>
   )
 }
