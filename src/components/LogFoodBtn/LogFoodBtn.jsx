@@ -11,8 +11,13 @@ function LogFoodBtn({ selectedFoods, setIsFoodListOpen, selectedMeal }) {
 
     function handleLog() {
         setIsFoodListOpen(false)
-        let newHistory = selectedFoods.filter(item => !logHistory.includes(item))
-        setLogHistory(prev => [...prev, ...newHistory])
+        let newHistory = [...logHistory]
+        newHistory.map((item , index)=>{
+            if(selectedFoods.includes(item)){
+                newHistory.splice(index , 1)
+            }
+        })
+        setLogHistory([...newHistory, ...selectedFoods])
         switch (selectedMeal) {
             case "breakfast":
                 setBreakfast(prev => [...prev, ...selectedFoods])
