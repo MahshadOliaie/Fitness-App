@@ -9,6 +9,7 @@
     gap: 10px;
     overflow: scroll;
     max-height: 75%;
+    padding-bottom: 60px;
 }
 
 .recentList {
