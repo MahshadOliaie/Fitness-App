@@ -1,0 +1,38 @@
+.email,
+.password {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.angleSvg,
+.editSvg {
+    width: 14px;
+    fill: rgba(128, 128, 128, 0.788);
+}
+
+.title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+    padding-left: 10px;
+    padding-bottom: 6px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+}
+
+.email{
+    position: relative;
+}
+
+.email::after {
+    content: "";
+    height: .5px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.506);
+    position: absolute;
+    bottom: -100%;
+}

@@ -1,0 +1,32 @@
+
+
+.title{
+    margin: 0;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+}
+
+
+.titleContainer{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+    padding: 0 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.editSvg {
+    width: 15px;
+}
+
+.info>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

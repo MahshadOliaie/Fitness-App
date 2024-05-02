@@ -1,0 +1,47 @@
+
+.title{
+    margin: 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+}
+
+.age,
+.weight,
+.height {
+    position: relative;
+}
+
+.age::after,
+.weight::after,
+.height::after {
+    content: "";
+    height: .5px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.506);
+    position: absolute;
+    bottom: -80%;
+}
+
+.titleContainer{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+    padding: 0 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.info>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.editSvg {
+    width: 15px;
+}
