@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.diagram path{
+    fill: none;
+}
+
+.baseline{
+    fill: none;
+    stroke-width: 3px;
+    stroke: rgba(0, 0, 0, 0.098);
+}
+
+.diagram{
+    width: 55%;
+}
+
+.waterPath{
+    stroke: rgb(89, 166, 220);
+    stroke-width: 3.1;
+}
