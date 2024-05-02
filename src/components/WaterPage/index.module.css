@@ -4,6 +4,8 @@
     justify-content: center;
     padding-top: 50px;
     position: relative;
+    width: 300px;
+    margin: auto;
 }
 
 .diagram path {
@@ -32,6 +34,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    width: 100%;
 }
 
 .drop img {
