@@ -14,6 +14,8 @@ function App() {
   const [lunch, setLunch] = useState(JSON.parse(localStorage.getItem("lunch")) || [])
   const [dinner, setDinner] = useState(JSON.parse(localStorage.getItem("dinner")) || [])
   const [snack, setSnack] = useState(JSON.parse(localStorage.getItem("snack")) || [])
+  const [water, setWater] = useState(JSON.parse(localStorage.getItem("water")) || 0)
+
 
   const [isFoodListOpen, setIsFoodListOpen] = useState(false)
   const [selectedMeal, setSelectedMeal] = useState("")
@@ -25,8 +27,9 @@ function App() {
     localStorage.setItem("dinner", JSON.stringify(dinner))
     localStorage.setItem("snack", JSON.stringify(snack))
     localStorage.setItem("logHistory", JSON.stringify(logHistory))
+    localStorage.setItem("water", JSON.stringify(water))
 
-  }, [breakfast, lunch, dinner, snack, logHistory])
+  }, [breakfast, lunch, dinner, snack, logHistory , water])
 
   return (
     <>
@@ -35,6 +38,8 @@ function App() {
         lunch,
         dinner,
         snack,
+        water,
+        setWater,
         setBreakfast,
         setDinner,
         setLunch,
@@ -66,6 +71,3 @@ function App() {
 }
 
 export default App
-
-
-// hYvUzuDQpZu/odwBI/6Abg==T3kgV51IrePL78hW

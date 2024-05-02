@@ -6,11 +6,12 @@ const FoodContext = createContext({
     lunch: [],
     dinner: [],
     snack: [],
+    water: 0,
     setBreakfast: () => { },
     setLunch: () => { },
     setDinner: () => { },
     setSnack: () => { },
-
+    setWater: () => { }
 })
 
 export default FoodContext
