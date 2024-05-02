@@ -14,7 +14,6 @@ function Dashboard({ setIsFoodListOpen, selectedMeal, isFoodListOpen, setSelecte
     const [lunch, setLunch] = useState(JSON.parse(localStorage.getItem("lunch")) || [])
     const [dinner, setDinner] = useState(JSON.parse(localStorage.getItem("dinner")) || [])
     const [snack, setSnack] = useState(JSON.parse(localStorage.getItem("snack")) || [])
-    const [water, setWater] = useState(JSON.parse(localStorage.getItem("water")) || 0)
     const [logHistory, setLogHistory] = useState(JSON.parse(localStorage.getItem("logHistory")) || [])
 
     useEffect(() => {
@@ -23,9 +22,8 @@ function Dashboard({ setIsFoodListOpen, selectedMeal, isFoodListOpen, setSelecte
         localStorage.setItem("dinner", JSON.stringify(dinner))
         localStorage.setItem("snack", JSON.stringify(snack))
         localStorage.setItem("logHistory", JSON.stringify(logHistory))
-        localStorage.setItem("water", JSON.stringify(water))
 
-    }, [breakfast, lunch, dinner, logHistory, snack, water])
+    }, [breakfast, lunch, dinner, logHistory, snack])
 
 
     return (
@@ -34,8 +32,6 @@ function Dashboard({ setIsFoodListOpen, selectedMeal, isFoodListOpen, setSelecte
             lunch,
             dinner,
             snack,
-            water,
-            setWater,
             setBreakfast,
             setDinner,
             setLunch,

@@ -1,10 +1,10 @@
 import { useContext } from 'react'
 import WaterInput from './WaterInput/WaterInput'
 import CSS from './index.module.css'
-import FoodContext from '../../context/FoodContext'
+import Water from '../../context/Water'
 
 function WaterPage() {
-    const { water } = useContext(FoodContext)
+    const { water } = useContext(Water)
     const totalWater = 3000;
     return (
         <>

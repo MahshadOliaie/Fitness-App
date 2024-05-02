@@ -1,11 +1,11 @@
 
 import { useContext, useRef } from 'react'
 import CSS from './index.module.css'
-import FoodContext from '../../../context/FoodContext'
+import Water from '../../../context/Water'
 
 function WaterInput() {
     const ref = useRef()
-    const { setWater } = useContext(FoodContext)
+    const { setWater } = useContext(Water)
 
     function handleClick(action) {
         let value = +ref.current.value
