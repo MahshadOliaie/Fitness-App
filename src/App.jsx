@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import WaterPage from "./components/WaterPage/WaterPage"
 import RecipePage from "./components/RecipePage/RecipePage"
 import Profile from "./components/Profile/Profile"
+import StarterWizardForm from "./components/StarterWizardForm/StarterWizardForm"
 
 function App() {
   const [breakfast, setBreakfast] = useState(JSON.parse(localStorage.getItem("breakfast")) || [])
@@ -29,7 +30,7 @@ function App() {
     localStorage.setItem("logHistory", JSON.stringify(logHistory))
     localStorage.setItem("water", JSON.stringify(water))
 
-  }, [breakfast, lunch, dinner, snack, logHistory , water])
+  }, [breakfast, lunch, dinner, snack, logHistory, water])
 
   return (
     <>
@@ -66,6 +67,7 @@ function App() {
 
         </LogHistory.Provider>
       </FoodContext.Provider >
+      <StarterWizardForm />
     </>
   )
 }
