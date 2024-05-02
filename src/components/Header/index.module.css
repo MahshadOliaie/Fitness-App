@@ -11,6 +11,7 @@
     border-bottom-right-radius: 30px;
     position: sticky;
     top: 0;
+    z-index: 100;
     width: 100%;
 }
 

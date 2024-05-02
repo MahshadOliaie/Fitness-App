@@ -47,7 +47,6 @@
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    z-index: -1;
 }
 
 .left , .budget{
