@@ -1,0 +1,16 @@
+.btnContainer {
+    align-self: flex-end;
+    margin-top: 40px;
+}
+
+.btn {
+    background-color: rgb(147 197 253);
+    width: max-content;
+    padding: 8px 20px;
+    border-radius: 8px;
+
+}
+
+.btn:hover {
+    background-color: rgb(96 165 250);
+}

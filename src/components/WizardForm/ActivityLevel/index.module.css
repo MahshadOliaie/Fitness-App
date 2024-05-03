@@ -1,0 +1,33 @@
+.title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 20px 0;
+}
+
+.eachSelect {
+    display: flex;
+    gap: 8px;
+}
+
+.error {
+    color: rgba(255, 0, 0, 0.727);
+    padding-left: 10px;
+}
+
+.btns {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.span{
+    color: rgb(107 114 128);
+}

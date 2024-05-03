@@ -1,0 +1,26 @@
+
+.number{
+    width: 40px;
+    aspect-ratio: 1/1;
+    background-color: rgb(147 197 253);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(107 114 128);
+}
+
+.line{
+    height: 4px;
+    flex: 1;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    margin: 40px auto;
+
+}

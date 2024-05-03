@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import Layout from "../Layout/Layout"
 import FoodContext from "../../context/FoodContext"
 import LogHistory from "../../context/LogHistory"
+import StepBar from "../WizardForm/StepBar/StepBar"
 
 
 
