@@ -29,21 +29,21 @@ function GoalSelector({ setStep, logSetter }) {
                 <div className={CSS.eachSelect} >
                     <input {...register("goal", {
                         required: "select one item"
-                    })} type="radio" name="goal" id="gain" value={"gain"} />
+                    })} type="radio" name="goal" id="gain" value={"Muscle gain"} />
                     <label htmlFor="gain">Muscle gain</label>
                 </div>
 
                 <div className={CSS.eachSelect}>
                     <input {...register("goal", {
                         required: "select one item"
-                    })} type="radio" name="goal" id="maintain" value={"maintain"} />
+                    })} type="radio" name="goal" id="maintain" value={"Maintain"} />
                     <label htmlFor="maintain">Maintain</label>
                 </div>
 
                 <div className={CSS.eachSelect}>
                     <input {...register("goal", {
                         required: "select one item"
-                    })} type="radio" name="goal" id="cut" value={"cut"} />
+                    })} type="radio" name="goal" id="cut" value={"Fat loss"} />
                     <label htmlFor="cut">Fat loss</label>
                 </div>
 

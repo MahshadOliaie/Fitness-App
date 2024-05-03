@@ -1,7 +1,20 @@
+
+import { useContext } from 'react';
 import CSS from './index.module.css'
+import Information from '../../../context/Information/Information';
 
 
 function ActivityLevel() {
+    const { activityLevel } = useContext(Information)
+
+    const activityLevelsList = {
+        "one": 'Sedentary',
+        "two": 'Lightly active',
+        "three": 'Moderately active',
+        "four": 'Very active',
+        "five": 'Extremely active'
+    }
+
     return (
         <>
             <div className={CSS.activityInfo}>
@@ -12,7 +25,7 @@ function ActivityLevel() {
                 <div className={CSS.info}>
                     <div className={CSS.activity}>
                         <p>activity level</p>
-                        <p>Very active</p>
+                        <p>{activityLevelsList[activityLevel.activityLevel]}</p>
                     </div>
                 </div>
             </div>

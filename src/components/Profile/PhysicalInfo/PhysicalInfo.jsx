@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import CSS from './index.module.css'
+import Information from '../../../context/Information/Information';
 
 function PhysicalInfo() {
+    const { physicalInfo } = useContext(Information)
+
     return (
         <>
             <div className={CSS.physicalInfo}>
@@ -11,19 +15,19 @@ function PhysicalInfo() {
                 <div className={CSS.info}>
                     <div className={CSS.age}>
                         <p>age</p>
-                        <p>22</p>
+                        <p>{physicalInfo.age}</p>
                     </div>
                     <div className={CSS.weight}>
                         <p>weight</p>
-                        <p>68 kg</p>
+                        <p>{physicalInfo.weight} kg</p>
                     </div>
                     <div className={CSS.height}>
                         <p>height</p>
-                        <p>168 cm</p>
+                        <p>{physicalInfo.height} cm</p>
                     </div>
                     <div className={CSS.gender}>
                         <p>gender</p>
-                        <p>female</p>
+                        <p>{physicalInfo.gender}</p>
                     </div>
                 </div>
             </div>

@@ -19,9 +19,9 @@ function ShowCalory() {
 
 
     const goals = {
-        "gain": maintainCalory + (maintainCalory / 10),
-        "cut": maintainCalory - (maintainCalory / 10),
-        "maintain": maintainCalory
+        "Muscle gain": maintainCalory + (maintainCalory / 10),
+        "Maintain": maintainCalory - (maintainCalory / 10),
+        "Fat loss": maintainCalory
     }
 
     return (

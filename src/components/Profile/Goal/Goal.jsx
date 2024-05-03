@@ -1,7 +1,10 @@
+import { useContext } from 'react'
 import CSS from './index.module.css'
+import Information from '../../../context/Information/Information'
 
 
 function Goal() {
+    const { goal } = useContext(Information)
     return (
         <>
             <div className={CSS.goalInfo}>
@@ -12,7 +15,7 @@ function Goal() {
                 <div className={CSS.info}>
                     <div className={CSS.goal}>
                         <p>goal</p>
-                        <p>Fat loss</p>
+                        <p>{goal.goal}</p>
                     </div>
                 </div>
             </div>

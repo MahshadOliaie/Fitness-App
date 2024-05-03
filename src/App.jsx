@@ -32,7 +32,7 @@ function App() {
 
 
   function logSetter() {
-    setFirstTimeLog(false)
+    setFirstTimeLog('false')
   }
 
   return (
