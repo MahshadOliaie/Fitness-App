@@ -19,8 +19,8 @@ function usePersonalNutritions() {
 
     const goals = {
         "Muscle gain": maintainCalory + (maintainCalory / 10),
-        "Maintain": maintainCalory - (maintainCalory / 10),
-        "Fat loss": maintainCalory
+        "Maintain": maintainCalory,
+        "Fat loss": maintainCalory - (maintainCalory / 10)
     }
 
     const maxCalories = Math.ceil(goals[goal.goal])

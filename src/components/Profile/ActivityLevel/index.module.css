@@ -28,3 +28,17 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.selector{
+    border: none;
+    padding: 5px 10px;
+    box-shadow: inset 1px 1px 5px rgb(214, 214, 214);
+    border-radius: 10px;
+}
+
+.submitBtn{
+    background-color: green;
+    color:  white;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
