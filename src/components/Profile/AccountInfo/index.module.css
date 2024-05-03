@@ -24,15 +24,38 @@
     padding: 10px;
 }
 
-.email{
+.password{
     position: relative;
 }
 
-.email::after {
+.password::before {
     content: "";
     height: .5px;
     width: 100%;
     background-color: rgba(128, 128, 128, 0.506);
     position: absolute;
-    bottom: -100%;
+    bottom: 150%;
+}
+
+.submitBtn{
+    background-color: green;
+    color:  white;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.input {
+    background: transparent;
+    border: none;
+    width: 150%;
+    border-bottom: 1px solid black;
+    padding: 5px 0;
+    font-size: 16px;
+    transition: 200ms;
+}
+
+.input:focus-visible {
+    border-bottom: 2px solid #246CD0;
+    outline: none;
+    transition: 200ms;
 }
