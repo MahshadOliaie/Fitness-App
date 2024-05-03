@@ -9,7 +9,7 @@ function AccountInfo() {
     const { register, handleSubmit, formState: { errors } } = useForm()
 
     async function submit(data) {
-        setPersonalInfo(data)
+        setPersonalInfo({ ...personalInfo, "email": data.email })
         await setEdit(false)
     }
 
