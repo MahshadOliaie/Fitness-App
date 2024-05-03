@@ -2,10 +2,12 @@ import { useContext } from 'react'
 import WaterInput from './WaterInput/WaterInput'
 import CSS from './index.module.css'
 import Water from '../../context/Water'
+import usePersonalNutritions from '../../hooks/usePersonalNutritions'
 
 function WaterPage() {
     const { water } = useContext(Water)
-    const totalWater = 3000;
+    const { maxWater } = usePersonalNutritions()
+    
     return (
         <>
             <div className={CSS.container}>
@@ -14,7 +16,7 @@ function WaterPage() {
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
-                    <path className={CSS.waterPath} strokeDasharray={`${water / (totalWater / 100)} 100`} d="M18 2.0845
+                    <path className={CSS.waterPath} strokeDasharray={`${water / (maxWater / 100)} 100`} d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
@@ -23,14 +25,14 @@ function WaterPage() {
                     <img src="/water.png" alt="" />
                     <p className={CSS.waterAmount}>{water}ml</p>
                     <div className={CSS.waterLeft}>
-                        {(water <= totalWater) ?
+                        {(water <= maxWater) ?
                             <>
-                                <p>{totalWater - water}ml</p>
+                                <p>{maxWater - water}ml</p>
                                 <p>left</p>
                             </>
                             :
                             <>
-                                <p style={{ color: "green" }}>{water - totalWater}ml</p>
+                                <p style={{ color: "green" }}>{water - maxWater}ml</p>
                                 <p style={{ color: "green" }}>over</p>
                             </>
                         }

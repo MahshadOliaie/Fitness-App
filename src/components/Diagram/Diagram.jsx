@@ -1,9 +1,10 @@
 import useCalculator from '../../hooks/useCalculator'
+import usePersonalNutritions from '../../hooks/usePersonalNutritions'
 import CSS from './index.module.css'
 
 function Diagram() {
     const { breakfastInfo, lunchInfo, dinnerInfo, snackInfo } = useCalculator()
-
+    const { maxCalories } = usePersonalNutritions()
     const total = {
         calories: [...breakfastInfo.calories, ...lunchInfo.calories, ...dinnerInfo.calories, ...snackInfo.calories].reduce((acc, curr) => +acc + +curr, 0),
         protein: [...breakfastInfo.protein, ...lunchInfo.protein, ...dinnerInfo.protein, ...snackInfo.protein].reduce((acc, curr) => +acc + +curr, 0),
@@ -18,7 +19,7 @@ function Diagram() {
     }
 
     const calc = (macro) => {
-        return caloriesOf[macro] / (2500 / 100)
+        return caloriesOf[macro] / (maxCalories / 100)
     }
 
     return (
@@ -29,7 +30,7 @@ function Diagram() {
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
-                    <path className={CSS.othersPath} strokeDasharray={`${(total.calories / (2500 / 100))} 100`} d="M18 2.0845
+                    <path className={CSS.othersPath} strokeDasharray={`${(total.calories / (maxCalories / 100))} 100`} d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
@@ -52,14 +53,14 @@ function Diagram() {
                 </svg>
                 <div className={CSS.calories}>
                     <p className={CSS.caloryNum}>{total.calories}</p>
-                    {(total.calories <= 2500) ?
+                    {(total.calories <= maxCalories) ?
                         <>
-                            <p className={CSS.budget}>{2500 - total.calories}</p>
+                            <p className={CSS.budget}>{maxCalories - total.calories}</p>
                             <p className={CSS.left}>left</p>
                         </>
                         :
                         <>
-                            <p className={CSS.budget}>{total.calories - 2500}</p>
+                            <p className={CSS.budget}>{total.calories - maxCalories}</p>
                             <p className={CSS.left} style={{ color: "red" }}>over</p>
                         </>
                     }
