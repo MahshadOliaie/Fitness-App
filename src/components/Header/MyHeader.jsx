@@ -3,7 +3,9 @@ import CSS from './index.module.css'
 function MyHeader() {
     return (
         <div className={CSS.header}>
-            <div className={CSS.image}></div>
+            <div className={CSS.logo}>
+                <img src='/blackLogo.png' />
+            </div>
             <div className={CSS.date}>
                 <div className={CSS.previous}>
                     <img src="/arrow.svg" className={CSS.arrowLeft} />
@@ -16,9 +18,8 @@ function MyHeader() {
                     <img src="/arrow.svg" className={CSS.arrowRight} />
                 </div>
             </div>
-            <div className={CSS.bar}>
-                <img src='/bar.svg' />
-            </div>
+
+            <div className={CSS.image}></div>
         </div>
     )
 }
