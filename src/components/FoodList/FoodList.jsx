@@ -11,7 +11,7 @@ function FoodList({ setSelectedFoods, selectedFoods }) {
     const [filteredFoodList, setFilteredFoodList] = useState([])
     const { logHistory } = useContext(LogHistory)
 
-    const data = useFetch('https://api.api-ninjas.com/v1/nutrition?query=egg and milk and rice and banana and bread and oats')
+    const data = useFetch('https://api.calorieninjas.com/v1/nutrition?query=egg and milk and rice and banana and bread and oats')
 
     useEffect(() => {
         setFoodList(data);

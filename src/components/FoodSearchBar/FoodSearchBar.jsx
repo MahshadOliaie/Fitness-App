@@ -8,7 +8,7 @@ import FoodListContext from '../../context/FoodListContext'
 function FoodSearchBar() {
     const { foodList, setFilteredFoodList } = useContext(FoodListContext)
     const [inputValue, setInputValue] = useState("")
-    const data = useFetch(`https://api.api-ninjas.com/v1/nutrition?query=${inputValue}`, inputValue)
+    const data = useFetch(`https://api.calorieninjas.com/v1/nutrition?query=${inputValue}`, inputValue)
 
     useEffect(() => {
         if (data?.length > 0) {

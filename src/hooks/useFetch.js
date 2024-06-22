@@ -8,11 +8,11 @@ function useFetch(url , dependency) {
     useEffect(() => {
 
         fetch(url, {
-            headers: { 'X-Api-Key': 'hYvUzuDQpZu/odwBI/6Abg==T3kgV51IrePL78hW' },
+            headers: { 'X-Api-Key': 'hYvUzuDQpZu/odwBI/6Abg==KP392OwaDeAUhan1' },
             contentType: 'application/json',
         })
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(data => setData(data.items))
 
     }, [dependency])
 
