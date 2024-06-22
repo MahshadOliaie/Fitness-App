@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import CSS from './index.module.css'
 
-function Food({ data, setSelectedFoods, selectedFoods }) {
+function Food({ data, setSelectedFoods, selectedFoods , onClick }) {
     const [selectState, setSelectState] = useState(false)
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function Food({ data, setSelectedFoods, selectedFoods }) {
     return (
         <>
             <div className={CSS.food}>
-                <div className={CSS.name}>{data.name}</div>
+                <div className={CSS.name} onClick={() => onClick(data)}>{data.name}</div>
                 <div className={CSS.rightBox}>
                     <div className={CSS.info}>
                         <p className={CSS.cals}>{Math.round(data.calories)} cals</p>

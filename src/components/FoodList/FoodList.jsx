@@ -6,7 +6,7 @@ import useFetch from '../../hooks/useFetch'
 import LogHistory from '../../context/LogHistory'
 import FoodListContext from '../../context/FoodListContext'
 
-function FoodList({ setSelectedFoods, selectedFoods }) {
+function FoodList({ setSelectedFoods, selectedFoods , onClick }) {
     const [foodList, setFoodList] = useState([])
     const [filteredFoodList, setFilteredFoodList] = useState([])
     const { logHistory } = useContext(LogHistory)
@@ -30,11 +30,11 @@ function FoodList({ setSelectedFoods, selectedFoods }) {
                 <div className={CSS.foodList}>
                     <div className={CSS.recentList}>
                         {(filteredFoodList.length > 1) && logHistory.map(food => {
-                            return <Food key={food.name} data={food} setSelectedFoods={setSelectedFoods} selectedFoods={selectedFoods} />
+                            return <Food key={food.name} data={food} setSelectedFoods={setSelectedFoods} selectedFoods={selectedFoods} onClick={(data) => onClick(data)} />
                         })}
                     </div>
                     {filteredFoodList?.map(food => {
-                        return <Food key={food.name} data={food} setSelectedFoods={setSelectedFoods} selectedFoods={selectedFoods} />
+                        return <Food key={food.name} data={food} setSelectedFoods={setSelectedFoods} selectedFoods={selectedFoods} onClick={(data) => onClick(data)} />
                     })}
                 </div>
             </FoodListContext.Provider>
